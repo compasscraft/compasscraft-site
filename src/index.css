@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep navy foundation - established, authoritative */
+    --background: 220 25% 97%;
+    --foreground: 220 40% 13%;
+
+    /* Card with subtle warmth */
+    --card: 40 20% 99%;
+    --card-foreground: 220 40% 13%;
+
+    --popover: 40 20% 99%;
+    --popover-foreground: 220 40% 13%;
+
+    /* Deep navy primary - classic professional */
+    --primary: 220 45% 18%;
+    --primary-foreground: 45 30% 95%;
+
+    /* Warm cream secondary */
+    --secondary: 40 25% 94%;
+    --secondary-foreground: 220 40% 13%;
+
+    /* Muted slate tones */
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Gold accent - heritage, prestige */
+    --accent: 42 65% 45%;
+    --accent-foreground: 220 40% 10%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 42 65% 45%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --gold: 42 65% 45%;
+    --gold-light: 42 50% 75%;
+    --navy-deep: 220 50% 12%;
+    --navy: 220 45% 18%;
+    --navy-light: 220 35% 28%;
+    --cream: 40 30% 96%;
+    --cream-dark: 40 20% 90%;
+  }
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Refined animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.8s ease-out 0.15s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.8s ease-out 0.45s forwards;
+  opacity: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
